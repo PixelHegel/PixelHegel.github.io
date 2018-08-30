@@ -1,224 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>这里整理了复古游戏中所有BOSS的行为模式 | lyyourc</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/app.css">
-  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
-  
-</head>
+extends includes/layout
 
-<body>
-  <nav class="app-nav">
-  
-    
-      <a href="/.">home</a>
-    
-  
-    
-      <a href="/archives">archive</a>
-    
-  
-    
-      <a href="/atom.xml">rss</a>
-    
-  
-</nav>
+block content
 
-  <main class="post">
-  <article>
-  <h1 class="article-title">
-    <a href="/2017/11/08/复古游戏中的BOSS设计2017-11-06/">这里整理了复古游戏中所有BOSS的行为模式</a>
-  </h1>
+    section#wrapper.post
+        article
+            header
+                h1!=page.title
+                h2.headline!=date(page.date, 'MMM DD, YYYY h:mm')
+                    |·
+                    |#{wordcount(page.content)} words
+                    |·
+                    |#{min2read(page.content)} minutes read
+                    span.tags
 
-  <section class="article-meta">
-    <p class="article-date">November 08 2017</p>
-  </section>
+            if toc(page.content)
+                div#toc!=toc(page.content,{list_number:false})
 
-  <section class="article-entry">
-    <p>前几日无意中看到一篇文章，整理了几乎所有复古游戏的敌人行为模式，很受启发，文中将敌人拆分成四个部分：移动方式，特质还有能力，再加上触发器，只要将这些内容进行拼接组合，就能快速设计出有趣的敌人。<br>&lt;&gt;<br>随后我联系了原作者，授权我翻译并转载。本人水平有限，难免有很多疏漏错误之处，也欢迎大家指出。</p>
-<blockquote>
-<p>本文原作者：Garret Bright<br>原文连接：见文末阅读原文<br>翻译作者：像素黑格尔<br>版权声明：本文翻译已经过原作者授权，未经许可，禁止转载。  </p>
-</blockquote>
-<hr>
-<h2 id="敌人经营着关卡"><a href="#敌人经营着关卡" class="headerlink" title="敌人经营着关卡"></a>敌人经营着关卡</h2><p>关卡设计不仅仅是关卡中的几何结构。所有的机关阻碍，以及陷阱都在测试着玩家的勇气，但是真正能给关卡带来生命的是敌人。他们的特点以及他们对关卡主题的切合是很重要的，正是他们的行为才让游戏活起来。各种各样的敌人在不同的方式上挑战着玩家，用特殊的方式制造难忘的体验，尤其是敌人的行为与关卡的几何结构可以交相呼应的时候。</p>
-<p><img src="http://ovfgeat2v.bkt.clouddn.com/2017110834409retrogame.png" alt="完美的敌人行为设计！"></p>
-<p>这篇文章不会探讨如何以及在哪里放置敌人。我们将会把重点集中在敌人的行为设计上。要时刻注意敌人的分布以及对玩家的移动和攻击的反映。可以参考一下混合马里奥（Super Mario Bros Crossover），里面可以看到玩家使用不同的方式移动和攻击时，敌人会有不同的反映。</p>
-<p>还有，要注意这篇文章主要讨论在2D空间中敌人的设计。虽然有些内容是可以应用到3D空间的，但是不同的维度和移动方向在这两个空间中有着很大的差别。</p>
-<h2 id="定义敌人的行为—状态和触发"><a href="#定义敌人的行为—状态和触发" class="headerlink" title="定义敌人的行为—状态和触发"></a>定义敌人的行为—状态和触发</h2><p>在玩过几乎所有的NES和SNES游戏后，我记录了一些敌人的行为，并且将他们分门别类。</p>
-<p>敌人的行为模式可以被分成主要的三大类</p>
-<ul>
-<li>移动:他们是如何移动的。</li>
-<li>特质:他们固有的特性。</li>
-<li>能力:他们能做的事情。</li>
-</ul>
-<p>将这三大类别进行混合搭配，你可以创建一个敌人的一种状态，然而，敌人会有很多状态，我们可以通过“触发器”让敌人在这多种状态之间切换。</p>
-<p>我把这些特性都列了出来。有趣的敌人可以通过这些特性的混合搭配成不同的状态，然后再依据经验设置的触发器设计出来。普通的敌人通常只有两种状态，通过一个触发器进行切换。但是BOSS战通常不同，通常会有四种或更多的状态，配合上多种的触发器。</p>
-<p>这个列表综合了几乎所有我能在复古游戏中找到的每个敌人的行为方式。但我也确定会有那么一些特性和触发器没有被列出来，所以如果你有一些特别的点子，请在下面留言!另外，用这个方法可以创建顶视角和侧视角中的所有敌人。<br>另外，考虑一下敌人发射出来的东西(子弹，箭，火球等等)，有些很酷的发射物规则，同样适用于敌人和玩家。</p>
-<p>好了不做过多介绍了，让我们看看这些属性吧!</p>
-<h2 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h2><p> <strong>Stationary</strong>-敌人不能移动。</p>
-<p><strong>Walker</strong>-敌人在地板上行走或奔跑。举例:超级马里奥里面的蘑菇怪。</p>
-<p><strong>Riser</strong>-敌人可以增加它的高度(通常不需要依靠特定的物体)。举例:超级马里奥里面的食人花。</p>
-<p><strong>Ducker</strong>-敌人可以减少自己的高度。举例:超级马里奥里的食人花。</p>
-<p><strong>Faller</strong>-敌人从天花板上掉落到地面上。通常敌人从某些东西上掉落。</p>
-<p><strong>Jumper</strong>-敌人可以弹起或跳跃。(有些会向前跳，有些会直往上跳然后落下来)。举例:大金刚（Donkey Kong）里的弹簧,超级玛丽奥2里面的尖尖嘴（Super Mario 2’s Tweeter）, 超级玛丽奥2里面的忍者（Super Mario 2’s Ninji ）。</p>
-<p><img src="http://ovfgeat2v.bkt.clouddn.com/2017110854959Ninjii_sprite.PNG" alt="2017110854959Ninjii_sprite.PNG"></p>
-<p><strong>Floater</strong>-敌人可以漂浮，飞翔。举例：恶魔城里面的蝙蝠（Castlevania’s Bats）。 </p>
-<p><strong>Sticky</strong>-敌人被困在墙上或天花板上。举例：超级马里奥2中的Spark（Super Mario 2’s Spark） </p>
-<p><strong>Waver</strong>-敌人像波浪一样移动。举例:超级马里奥中会飞的乌龟。</p>
-<p><strong>Rotator</strong>- 敌人绕着固定的一点转动。有的时候固定的点也会移动，同样参考这个表单里的移动方式。旋转的方向也有可能改变。举例： 超级马里奥3中的火烙子（Super Mario 3’s Rotodisc）。<br><img src="http://ovfgeat2v.bkt.clouddn.com/2017110843918Rotodisc.gif" alt="2017110843918Rotodisc.gif"><br><strong>Swinger</strong>-敌人绕着固定的点摇摆。举例：恶魔城中摇摆的剑（Castlevania’s swinging blades）。</p>
-<p><strong>Pacer</strong>-当敌人碰到触发器的时候会改变方向（比如到达了平台的边缘）。举例：超级马里奥里红色的库巴（Super Mario’s Red Koopas）。</p>
-<p><strong>Follower</strong>-敌人跟随着玩家（多用在Top-Down游戏中）举例：塞尔达3中的甲虫（Zelda 3’s Hard Hat Beetles）。</p>
-<p><strong>Roamer</strong>-敌人完全随机的改变方向。举例：塞尔达中的Octoroks（Legend of Zelda’s Octoroks）。</p>
-<blockquote>
-<p>举例中的敌人名称很难译成中文，后面就不再翻译了</p>
-</blockquote>
-<p><strong>Liner</strong>-敌人沿着一条直线移动到场景中的某一点。忘记了记录这个运动方式的敌人，通常他们在两点之间移动，有时候是随机的，试图”切开“玩家。</p>
-<p><strong>Teleporter</strong>-敌人可以从一个地方瞬间移动到另一个地方。举例：Zelda’s Wizrrobes<br><img src="http://ovfgeat2v.bkt.clouddn.com/2017110819182Wizzrobe-2.png" alt="2017110819182Wizzrobe-2.png"><br><strong>Dasher</strong>-敌人会快速的冲向一个方向，比通常的移动速度要快。举例：Zelda’s Rope Snakes </p>
-<p><strong>Ponger</strong>-敌人忽略重力和物理定律，在墙之间以直线弹跳。举例：Zelda 2’s “Bubbles” </p>
-<p><strong>Geobound</strong>-敌人被困在关卡的结构中，有时候也会充当关卡的结构。举例：Megaman’s Spikes, Super Mario’s Piranha Plants, Castlevania’s White Dragon </p>
-<p><strong>Tethered</strong> - 敌人被拴在关卡的结构中，拴住它的可能是一条锁链，或是一条绳子。举例：Super Mario’s Chain Chomps </p>
-<p><strong>Swooper</strong>-这种敌人通常浮在半空中，然后突然冲下来，再回到原来的位置。举例：Castlevania’s Bats, Super Mario’s Swoopers, Super Mario 3’s Angry Sun </p>
-<p><strong>Mirror</strong>-敌人的移动和玩家的移动一样，有时候也会和玩家的移动相反。举例：Zelda 3’s Goriya </p>
-<h2 id="特质"><a href="#特质" class="headerlink" title="特质"></a>特质</h2><p><strong>Geolgnore</strong>-敌人可以忽视关卡中的结构，可以穿过固体，就像幽灵一样。举例：Super Mario 3’s Rotodisc, 有很多能够飞行的敌人也可以忽略关卡中的地形。</p>
-<p><strong>GeoDestory</strong>-敌人可以摧毁关卡结构。举例：Super Mario 3’s Bowser, Bob-ombs. </p>
-<p><strong>Shielder</strong>-当玩家从特定的位置或角度攻击敌人，或者攻击敌人特定的部位时，攻击变成无效的。举例：Zelda 2’s Dark Nuts</p>
-<p><strong>Reflector</strong>-敌人能反弹回玩家的远程攻击。</p>
-<p><strong>Damager</strong>-当玩家碰到这种敌人的时候会收到伤害。绝大多数敌人都有这种特性。</p>
-<p><strong>Redamager</strong>-当玩家攻击到这种敌人时，玩家会受到伤害。举例：Link to the Past’s Buzz Blob </p>
-<p><strong>Secret Spot</strong>-敌人只有一个弱点，只有攻击到这个弱点的时候才会受到伤害，和Shielder相反。绝大多数的BOSS具有这个特性。</p>
-<p><strong>Invulnerable</strong>-敌人不能被伤害或杀死：大多数场景中危险的障碍物（尖刺，石块，火球）。</p>
-<p><strong>Reanimator</strong>-敌人死后会复活。举例： Castlevania’s Skeletons, Super Mario’s Dry Bones. </p>
-<p><strong>Regenerator</strong>-敌人的生命值过一段时间会回复。</p>
-<p><strong>Secret Weakness</strong>-敌人特别惧怕某一种攻击方式（火球，魔法，箭等等）。举例：Zelda’s Dodogno (weakness to bombs).。</p>
-<p><strong>Hard to Hit</strong>-敌人很难被玩家的正常攻击方式攻击到。他们通常具有特别快的移动速度，或者很小。举例：Zelda 2’s Myu </p>
-<p><strong>Segmented</strong>-敌人由很多更小的个体组成，每个个体都能被单独地摧毁。举例：Zelda’s Manhandla, Super Mario’s Pokeys </p>
-<p><strong>Bumper</strong>-这种敌人行动起来就像弹珠台的发射器，可以把玩家很快推开。举例： Zelda 3’s Hard Hat Beetles </p>
-<p><strong>GeoMimic</strong>-这种敌人具有关卡结构的属性。很多情况下，玩家可以站在他们上面。举例：Most enemies in Mario 2, Megaman X’s Sigma, Castlevania’s Catoblepas </p>
-<p><strong>Alarm</strong>-一个敌人会触发其他敌人的行为。</p>
-<p><strong>Meta-vulnerable</strong>-这种敌人可以被特别的动作杀死，比如说重置游戏，购买内置商店中的某个物品，在社交网站分享游戏，在有陀螺仪的情况下颠倒过来玩，在一个光线好的房间里玩，在麦克风旁边制造噪音。举例：Japanese Zelda’s Pol’s Voice </p>
-<h2 id="能力"><a href="#能力" class="headerlink" title="能力"></a>能力</h2><p><strong>Melee Attack</strong>-敌人只有很近的攻击范围。</p>
-<p><strong>Emitter</strong>-敌人可以发射其他敌人，或者发射物。这个类型和Thrower很像，区别可以从字面上理解。投掷者（Thrower）会有一个抓取东西的动作，然而Emitter，有无穷无尽的弹药可以发射。举例：Super Mario 3’s Bullet Bill Cannons, Super Mario’s Lakitus</p>
-<p><strong>Thrower</strong>-敌人可以将他们抓住的东西扔出去，不论是什么（一个物体，玩家，或者其他敌人）。这种攻击方法通常和Carriers结合，但也并不总是这么结合。举例：Castlevania’s Barrel throwing Skeletons, Super Mario 3’s Buster Beetle </p>
-<p><strong>Grower</strong>-敌人可以变大。</p>
-<p><strong>Shrinker</strong>-敌人可以收缩变小。</p>
-<p><strong>Forcer</strong>-敌人可以将玩家推远，我没有找到特别的例子。也有种情况是敌人向玩家吹气，使得玩家后退。</p>
-<p><strong>Carrier</strong>-敌人可以抓起其他敌人，物体，或者玩家。这个是有些宽泛的，也包括了敌人会“吃掉”玩家，然后再将其吐出，又或者抓住玩家限制玩家的移动。举例：Zelda’s WallMasters。</p>
-<p><strong>Splitter</strong>-敌人可以摧毁自己，然后分裂成多个不同的敌人。举例：Rogue Legacy’s Slimes, Legend of Zelda’s Vire and Biri. </p>
-<p><strong>Cloner</strong>—敌人可以复制自己，通常复制出来的是一模一样的，也有的情况是复制出来的有一些提升（比如更多的血量以及更快的速度）。制造复制的敌人不会消失。举例：Zelda’s Ghini </p>
-<p><strong>Morpher</strong>-敌人能够变形成另一种类型的敌人。通常这是暂时的，有的时候，敌人可以有多重变身形态。</p>
-<p><strong>Sapper</strong>-敌人可以影响并改变玩家的状态（减慢玩家的速度，降低玩家跳跃的高度，以及发动攻击的能力）。这些负面状态可以是永久的也可以是暂时的。</p>
-<p><strong>Latcher</strong>-和Sapper有些像，敌人可以消耗玩家的状态和能力，而且会锁住玩家的状态。举例：Mario 3’s Mini-Goombas, Zelda’s Like-Likes. </p>
-<p><strong>Hider</strong>-敌人能够从玩家的视角隐藏。典型的是敌人会一直隐藏，直到玩家进入设定的距离，也可能是相反的，当玩家离敌人太近的时候敌人会隐藏。举例：Mario’s Piranha Plants. </p>
-<p><strong>Exploder</strong>-敌人会摧毁自己制造威力巨大的爆炸伤害。举例：Proximity Mines found in many games, Mario’s Bo-Bombs </p>
-<p><strong>Interactor</strong>-敌人会与一些物体相互作用，比如杠杆，按钮。</p>
-<p><strong>Charger</strong>-敌人会在切换状态的时候暂停行动，可以理解为充能。举例：Castlevania’s Wolves (Who pause a moment and lunge towards the player) </p>
-<p><strong>Meta-Manipulator</strong>-敌人可以操控一些非实物，或是当前场景外的东西，像是一天中的时间，天气，玩家的性别，保存的文件，解锁游戏的模式。</p>
-<h2 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h2><p><strong>Random</strong>-敌人随机切换到一个新的状态。</p>
-<p><strong>Timed</strong>-敌人随着时间的周期变化切换状态。</p>
-<p><strong>Time Cycle</strong>-敌人状态的切换取决于一天的时间循环。比如晚上睡觉，白天活动。</p>
-<p><strong>Distance Traveled</strong>-敌人到达一个具体的位置之后会改变状态。</p>
-<p><strong>Proximity</strong>-敌人会和另一个物体保持一定的距离，可能是玩家，也可能是另一个敌人，或者场景中的物体。</p>
-<p><strong>Post-Ability</strong>-敌人在完成了某种动作之后改变状态。举例：敌人发射了一颗子弹，然后紧接着躲进了关卡的结构中。</p>
-<p><strong>Occupies-Volume</strong>-敌人进入了一个块状区域后。可以是一片水域，或者是隐形的城镇的边界。</p>
-<p><strong>Stat Value</strong>-敌人根据自己的状态，或者玩家的状态来改变自己的行为。举例：当敌人的生命降低到10%以内的时候，就进入狂暴状态。或者当玩家有很多魔法值的时候，敌人将他们吸收掉。</p>
-<p><strong>Line of Sight</strong>-当敌人以自己的视角看到玩家，或者其他敌人，或者场景中物体时。</p>
-<p><strong>Scripted Event</strong>-一个脚本事件造成敌人改变他的行为。</p>
-<p><strong>Someone Else</strong>-一个需要其他敌人唤醒的触发器。举例：当一个敌人的血量低于20%时，其他的敌人冲向玩家。</p>
-<p><strong>Death</strong>-敌人生命值耗尽或者其他造成死亡的原因。</p>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>很多行为和属性可以通过改变一些数值变量从而产生更多的变化。事实上，变量也可以通过触发器的触发来改变。这里有些例子：</p>
-<ul>
-<li>移动速度</li>
-<li>跳跃高度</li>
-<li>正弦波的长度和振幅</li>
-<li>攻击范围</li>
-<li>飞溅伤害的半径</li>
-<li>敌人的大小</li>
-<li>冲撞的举例</li>
-<li>……等等</li>
-</ul>
-<p>我们可以通过这些数值的变化，降低或者增加，创造出独特的敌人。一个快速移动的蘑菇怪要比缓慢移动的有威胁的多！</p>
-<h2 id="享受乐趣吧！"><a href="#享受乐趣吧！" class="headerlink" title="享受乐趣吧！"></a>享受乐趣吧！</h2><p>将这些行为混合搭配真的很有趣！就像乐高一样，一个行为模式的乐高系统。我还为此写了一个程序来帮助我们设计。甚至可以帮助你随机出各种状态。欢迎大家来使用，并且玩的开心！这也是游戏设计的乐趣。</p>
-<hr>
-<p>原文作者还放出了他的自己的敌人设计工具，大家可以去试试看！</p>
-<blockquote>
-<p><a href="https://garmichael.develteam.com/content/webPlayers/BadGuyWorkshop/" target="_blank" rel="noopener">https://garmichael.develteam.com/content/webPlayers/BadGuyWorkshop/</a></p>
-</blockquote>
+            section#post-body!=page.content
 
-  </section>
-</article>
+            - var prev = page.prev ? page.prev.path : false;
+            - var next = page.next ? page.next.path : false;
+            nav#post-nav
+                span.prev
+                    if page.prev
+                        a(href=url_for(prev))
+                            span.arrow ←
+                            | Newer Posts
+                span.next
+                    if page.next
+                        a(href=url_for(next))
+                            | Older Posts
+                            span.arrow →
 
-  <div class="sharing grid">
-  <section class="profile grid-item grid">
-    <img class="avatar" src="http://7xrcp8.com1.z0.glb.clouddn.com/avatar.png" alt="avatar" />
-    <div class="grid-item">
-      <p class="title"> lyyourc </p>
-      <p class="subtitle"> You Are The JavaScript In My HTML </p>
-    <div>
-  </section>
-
-  <section class="share-btns">
-    <!-- <p> share it if you like it~ </p> -->
-    <a
-  class="twitter-share-button"
-  data-size="large"
-  data-via="DrakeLeung"
-  href="https://twitter.com/intent/tweet?text=前几日无意中看到一篇文章，整理了几乎所有"
->
-  Tweet
-</a>
-
-<script>
-  window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  js.async = true;
-  fjs.parentNode.insertBefore(js, fjs);
-
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
-
-  return t;
-}(document, "script", "twitter-wjs"));
-</script>
-
-  </section>
-</div>
+            include includes/comment.pug
 
 
-  
-    
-<section class="article-comment">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
-
-<script>
-  var disqus_shortname = 'drakeleung';
-  
-  var disqus_url = 'http://yoursite.com/2017/11/08/复古游戏中的BOSS设计2017-11-06/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
 
 
-  
-</main>
-
-</body>
-</html>
