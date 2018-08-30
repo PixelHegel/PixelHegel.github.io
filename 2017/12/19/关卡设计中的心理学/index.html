@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近事情比较多，公众号好久没有更新了，也在思考后续带给大家什么内容 大家如果有什么建议，可以留言，我们一起成长 今天给大家带来的是关于损失厌恶在关卡设计中的应用，希望大家喜欢 文章只代表原作者观点，翻译中有很多疏漏之处，也请大家多多指正！  原作者：Jamie Madigan翻译作者：像素黑格尔已得到作者授权，转载请联系本人  在开始之前，先抛砖引玉一下，大家来考虑一下这两种情况：  玩家Y在一场">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/12/19/关卡设计中的心理学/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="最近事情比较多，公众号好久没有更新了，也在思考后续带给大家什么内容 大家如果有什么建议，可以留言，我们一起成长 今天给大家带来的是关于损失厌恶在关卡设计中的应用，希望大家喜欢 文章只代表原作者观点，翻译中有很多疏漏之处，也请大家多多指正！  原作者：Jamie Madigan翻译作者：像素黑格尔已得到作者授权，转载请联系本人  在开始之前，先抛砖引玉一下，大家来考虑一下这两种情况：  玩家Y在一场">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://ovfgeat2v.bkt.clouddn.com/2017122663933loss-aversion.jpg">
+<meta property="og:image" content="http://ovfgeat2v.bkt.clouddn.com/2017122663933loss-aversion.jpg">
+<meta property="og:updated_time" content="2017-12-26T12:41:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="最近事情比较多，公众号好久没有更新了，也在思考后续带给大家什么内容 大家如果有什么建议，可以留言，我们一起成长 今天给大家带来的是关于损失厌恶在关卡设计中的应用，希望大家喜欢 文章只代表原作者观点，翻译中有很多疏漏之处，也请大家多多指正！  原作者：Jamie Madigan翻译作者：像素黑格尔已得到作者授权，转载请联系本人  在开始之前，先抛砖引玉一下，大家来考虑一下这两种情况：  玩家Y在一场">
+<meta name="twitter:image" content="http://ovfgeat2v.bkt.clouddn.com/2017122663933loss-aversion.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-关卡设计中的心理学" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/19/关卡设计中的心理学/" class="article-date">
+  <time datetime="2017-12-19T05:56:16.000Z" itemprop="datePublished">2017-12-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近事情比较多，公众号好久没有更新了，也在思考后续带给大家什么内容</p>
+<p>大家如果有什么建议，可以留言，我们一起成长</p>
+<p>今天给大家带来的是关于损失厌恶在关卡设计中的应用，希望大家喜欢</p>
+<p>文章只代表原作者观点，翻译中有很多疏漏之处，也请大家多多指正！</p>
+<blockquote>
+<p>原作者：Jamie Madigan<br>翻译作者：像素黑格尔<br>已得到作者授权，转载请联系本人</p>
+</blockquote>
+<p>在开始之前，先抛砖引玉一下，大家来考虑一下这两种情况：</p>
+<blockquote>
+<p>玩家Y在一场匹配中赢得一场比赛，然后他得到了两个宝箱，打开第一个宝箱，他得到了500个游戏内的货币，然后第二个，有250个。</p>
+</blockquote>
+<blockquote>
+<p>玩家Z赢得了一场几乎一样的比赛，只得到一个宝箱，这个宝箱中包含750个游戏内货币。</p>
+</blockquote>
+<p>这看起来是一样的</p>
+<p>然而实际却不一样</p>
+<p>有一个玩家回更高兴</p>
+<p>但是哪一个玩家会更高兴呢？</p>
+<p>或者来想像一下这个情景:</p>
+<blockquote>
+<p>玩家A的角色死亡了，然后他必须花费金币去买两个游戏内物品才能让他的角色复活，第一个物品是一个花费1000金币的魔法卷轴，第二个是花费500金币的魔法墨水</p>
+</blockquote>
+<blockquote>
+<p>玩家B的角色和玩家A角色的等级和生命值近乎一样，他的角色死亡之后必须要买一个花费1500金币的复活卷轴</p>
+</blockquote>
+<p>这看起来也是相等的，哪个玩家会更不爽呢？</p>
+<p>如果你向足够多的人问同样的问题</p>
+<p>他们中的绝大多数会说玩家Z会更开心（一次获得750个游戏内货币的玩家），玩家A会更不爽（要分两次购买复活物品的玩家）</p>
+<p>尽管在情境中得到的游戏内货币或是得到的金币都是相同的，唯一的区别是，收益/损失是在一次完成，还是被分散成两次</p>
+<p>行为经济学家查理德泰勒，也做了相同的实验，他的实验情景是税收和彩票，收益和损失也分为更多和更少的次数</p>
+<p>他发现人们更细化把自己的收益集中起来，彩票中奖一次性中更多的钱能让人更开心，然而面对损失的时候，人们更喜欢接收被分散的损失，逐步提高的税收更能让人们接受</p>
+<p>这一基本的原理在心理学中已经得到证实，可以在游戏设计中得到极大的应用。如果你开始注意这一点，并在游戏中应用的时候，你会有很多收获</p>
+<p>在我们深入进去之前，让我们研究一下在人脑中与之相关的一个现象：损失厌恶。简单的讲就是同等的损失获得的痛苦要比同等收益获得的痛苦多的多，损失差不多是收益的两倍，损失100块钱产生的痛苦，需要用200块钱的收益来弥补</p>
+<p>也许这张图片更能说明问题：</p>
+<p><img src="http://ovfgeat2v.bkt.clouddn.com/2017122663933loss-aversion.jpg" alt="2017122663933loss-aversion.jpg"></p>
+<p>水平坐标代表的是损失和收益，中间是0，既没有损失也没有收益。纵轴代表的是你的快乐程度（上半轴），和你的痛苦程度（下半轴）。如果你画出收益的数值，你就能对应着找到一个快乐程度的坐标。</p>
+<p>你可以发现，在损失，痛苦象限中的斜率要更陡一些。就是说，用更少的损失创造的痛苦就能抵消更多收益获得的快乐，这就是损失厌恶。</p>
+<p>正因如此，我们为了避免100块的损失投入的努力要比去获得一百块付出的努力多。这也意味着，相比于收益，我们更倾向于去规避失去中的风险。这不仅仅是在经济方面中的应用。损失厌恶可以应用在经验，物品，以及任何带有数值的东西上面。在游戏中，可以包括点数，等级，游戏内的货币，以及其他很多东西。</p>
+<p>“如果你想让玩家对自己的风险感到安全，”Nik Davidson说，他是一名10年经验的MMORPG策划，项目经历包括指环王Online，“你应该考虑玩家收获的奖励，大约是相应惩罚的三倍。”</p>
+<p>你会发现当你开始整合绑定损失和收益的时候，事情会变得有趣。我们给失去加了更多的比重，获得300经验以及失去100经验，不等于300减去100。他们带给玩家的感受大致是相等的，因为100点经验的损失太大了。</p>
+<p>游戏设计者要从玩家那里拿走一些东西的时候，要特别的小心。想象一款第一人称射击游戏中，对一把枪做出了如下改良“增加1点伤害，增加1点装载速度，减少2发弹夹存储”。很多人会觉得是一种削弱，是因为失去两发子弹的装载比另外两项的增幅大多了。“你需要注意改变产生的影响”Davidson说。举一个例子：“如果玩家在一个方面有所失去，又在另一个方面有所收获。着看起来是相等的，但事实并不是，就算收获的东西要比失去的东西更好，但玩家的感情还是会有所不同”。</p>
+<p>然而，事情不只是这么简单</p>
+<p>这里还有更多要说的，因为我们在收益和损失上附加的价值也会随着收益的增加而减少，为了说明这一点，请考虑一下这种情况，这是受一个关于收益递减法则(或递减成本)的经典实验的启发。</p>
+<p>想象一下，你正在考虑为升级你的敏捷属性花费15金币。但是问题是，你注意到进行同样的升级，另一个升级点只需要10金币，但是你要到达那里需要花费20分钟。那么你想花费20分钟去另一个升级点吗？</p>
+<p>很多被问了相似问题的其他人（包含真实世界中的物品），说当商品价格为15美元时，他们愿意跑腿去省下这5美元。现在，考虑一下这个情景下的不同数值：</p>
+<p>现在想象你在考虑是否花费1250金币去升级你的耐力属性。现在的问题是，你注意到几个区域之外的另一个升级点只需要1245金币，但是你需要花费20分钟到达那里。</p>
+<p>如果你体验的是这种情景，你还会去花费20分钟去省下5个金币（或者5美元）吗？是这样的，在这种情况中，当数值趋向于一个极端时，我们会变得对收益以及损失的不那么敏感，而不是去思考“二十分钟值不值5美元?”。</p>
+<p><img src="http://ovfgeat2v.bkt.clouddn.com/2017122663933loss-aversion.jpg" alt="2017122663933loss-aversion.jpg"></p>
+<p>我们注意到曲线在右上象限慢慢趋于平缓，在水平坐标上，坐标点位于水平坐标轴1/4处的点</p>
+<p>没看过任何一本心理学著作的游戏设计师们，已经早已意识到这一点。这就是为什么在刺客信条系列的游戏中，每当完成章节最终关卡时，会掉落很多个宝箱（每个宝箱中有足够达到玩家阈值的奖励），而不是一个大宝箱。这也是你会在游戏中到处找商人，训练家来升级技能的原因。</p>
+<p>所以当下次你再提升人物等级，升级你的武器，或者从任务中得到一个奖赏的时候，花费一点时间思考一下：由于我们大脑的不完善，损失厌恶以及敏感度降低会对事情产生怎样的影响。感谢我们有一个不完善的大脑！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/19/关卡设计中的心理学/" data-id="cjlg5trq60002foq64p2hmwg0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/08/30/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/16/反馈回路/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/30/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/19/关卡设计中的心理学/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/16/反馈回路/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/08/复古游戏中的BOSS设计2017-11-06/">这里整理了复古游戏中所有BOSS的行为模式</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/24/为什么有些小游戏一玩就上瘾？/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
