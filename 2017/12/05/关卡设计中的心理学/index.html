@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="最近事情比较多，公众号好久没有更新了，也在思考后续带给大家什么内容 大家如果有什么建议，可以留言，我们一起成长 今天给大家带来的是关于损失厌恶在关卡设计中的应用，希望大家喜欢 文章只代表原作者观点，翻译中有很多疏漏之处，也请大家多多指正！  原作者：Jamie Madigan 翻译作者：像素黑格尔 已得到作者授权，转载请联系本人  在开始之前，先抛砖引玉一下，大家来考虑一下这两种情况：  玩家Y在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关卡设计中的心理学">
+<meta property="og:url" content="http://yoursite.com/2017/12/05/关卡设计中的心理学/index.html">
+<meta property="og:site_name" content="Pixelhegel">
+<meta property="og:description" content="最近事情比较多，公众号好久没有更新了，也在思考后续带给大家什么内容 大家如果有什么建议，可以留言，我们一起成长 今天给大家带来的是关于损失厌恶在关卡设计中的应用，希望大家喜欢 文章只代表原作者观点，翻译中有很多疏漏之处，也请大家多多指正！  原作者：Jamie Madigan 翻译作者：像素黑格尔 已得到作者授权，转载请联系本人  在开始之前，先抛砖引玉一下，大家来考虑一下这两种情况：  玩家Y在">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://ovfgeat2v.bkt.clouddn.com/2017122663933loss-aversion.jpg">
+<meta property="og:image" content="http://ovfgeat2v.bkt.clouddn.com/2017122663933loss-aversion.jpg">
+<meta property="og:updated_time" content="2018-08-31T03:11:33.403Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关卡设计中的心理学">
+<meta name="twitter:description" content="最近事情比较多，公众号好久没有更新了，也在思考后续带给大家什么内容 大家如果有什么建议，可以留言，我们一起成长 今天给大家带来的是关于损失厌恶在关卡设计中的应用，希望大家喜欢 文章只代表原作者观点，翻译中有很多疏漏之处，也请大家多多指正！  原作者：Jamie Madigan 翻译作者：像素黑格尔 已得到作者授权，转载请联系本人  在开始之前，先抛砖引玉一下，大家来考虑一下这两种情况：  玩家Y在">
+<meta name="twitter:image" content="http://ovfgeat2v.bkt.clouddn.com/2017122663933loss-aversion.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/05/关卡设计中的心理学/"/>
+
+
+
+
+
+  <title>关卡设计中的心理学 | Pixelhegel</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pixelhegel</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">game and data anaylize</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/05/关卡设计中的心理学/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pixelhegel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pixelhegel">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">关卡设计中的心理学</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-05T23:39:00+08:00">
+                2017-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/游戏/" itemprop="url" rel="index">
+                    <span itemprop="name">游戏</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近事情比较多，公众号好久没有更新了，也在思考后续带给大家什么内容</p>
+<p>大家如果有什么建议，可以留言，我们一起成长</p>
+<p>今天给大家带来的是关于损失厌恶在关卡设计中的应用，希望大家喜欢</p>
+<p>文章只代表原作者观点，翻译中有很多疏漏之处，也请大家多多指正！</p>
+<blockquote>
+<p>原作者：Jamie Madigan
+翻译作者：像素黑格尔
+已得到作者授权，转载请联系本人</p>
+</blockquote>
+<p>在开始之前，先抛砖引玉一下，大家来考虑一下这两种情况：</p>
+<blockquote>
+<p>玩家Y在一场匹配中赢得一场比赛，然后他得到了两个宝箱，打开第一个宝箱，他得到了500个游戏内的货币，然后第二个，有250个。</p>
+</blockquote>
+<blockquote>
+<p>玩家Z赢得了一场几乎一样的比赛，只得到一个宝箱，这个宝箱中包含750个游戏内货币。</p>
+</blockquote>
+<p>这看起来是一样的</p>
+<p>然而实际却不一样</p>
+<p>有一个玩家回更高兴</p>
+<p>但是哪一个玩家会更高兴呢？</p>
+<p>或者来想像一下这个情景:</p>
+<blockquote>
+<p>玩家A的角色死亡了，然后他必须花费金币去买两个游戏内物品才能让他的角色复活，第一个物品是一个花费1000金币的魔法卷轴，第二个是花费500金币的魔法墨水</p>
+</blockquote>
+<blockquote>
+<p>玩家B的角色和玩家A角色的等级和生命值近乎一样，他的角色死亡之后必须要买一个花费1500金币的复活卷轴</p>
+</blockquote>
+<p>这看起来也是相等的，哪个玩家会更不爽呢？</p>
+<p>如果你向足够多的人问同样的问题</p>
+<p>他们中的绝大多数会说玩家Z会更开心（一次获得750个游戏内货币的玩家），玩家A会更不爽（要分两次购买复活物品的玩家）</p>
+<p>尽管在情境中得到的游戏内货币或是得到的金币都是相同的，唯一的区别是，收益/损失是在一次完成，还是被分散成两次</p>
+<p>行为经济学家查理德泰勒，也做了相同的实验，他的实验情景是税收和彩票，收益和损失也分为更多和更少的次数</p>
+<p>他发现人们更细化把自己的收益集中起来，彩票中奖一次性中更多的钱能让人更开心，然而面对损失的时候，人们更喜欢接收被分散的损失，逐步提高的税收更能让人们接受</p>
+<p>这一基本的原理在心理学中已经得到证实，可以在游戏设计中得到极大的应用。如果你开始注意这一点，并在游戏中应用的时候，你会有很多收获</p>
+<p>在我们深入进去之前，让我们研究一下在人脑中与之相关的一个现象：损失厌恶。简单的讲就是同等的损失获得的痛苦要比同等收益获得的痛苦多的多，损失差不多是收益的两倍，损失100块钱产生的痛苦，需要用200块钱的收益来弥补</p>
+<p>也许这张图片更能说明问题：</p>
+<p><img src="http://ovfgeat2v.bkt.clouddn.com/2017122663933loss-aversion.jpg" alt="2017122663933loss-aversion.jpg"></p>
+<p>水平坐标代表的是损失和收益，中间是0，既没有损失也没有收益。纵轴代表的是你的快乐程度（上半轴），和你的痛苦程度（下半轴）。如果你画出收益的数值，你就能对应着找到一个快乐程度的坐标。</p>
+<p>你可以发现，在损失，痛苦象限中的斜率要更陡一些。就是说，用更少的损失创造的痛苦就能抵消更多收益获得的快乐，这就是损失厌恶。</p>
+<p>正因如此，我们为了避免100块的损失投入的努力要比去获得一百块付出的努力多。这也意味着，相比于收益，我们更倾向于去规避失去中的风险。这不仅仅是在经济方面中的应用。损失厌恶可以应用在经验，物品，以及任何带有数值的东西上面。在游戏中，可以包括点数，等级，游戏内的货币，以及其他很多东西。</p>
+<p>“如果你想让玩家对自己的风险感到安全，”Nik Davidson说，他是一名10年经验的MMORPG策划，项目经历包括指环王Online，“你应该考虑玩家收获的奖励，大约是相应惩罚的三倍。”</p>
+<p>你会发现当你开始整合绑定损失和收益的时候，事情会变得有趣。我们给失去加了更多的比重，获得300经验以及失去100经验，不等于300减去100。他们带给玩家的感受大致是相等的，因为100点经验的损失太大了。</p>
+<p>游戏设计者要从玩家那里拿走一些东西的时候，要特别的小心。想象一款第一人称射击游戏中，对一把枪做出了如下改良“增加1点伤害，增加1点装载速度，减少2发弹夹存储”。很多人会觉得是一种削弱，是因为失去两发子弹的装载比另外两项的增幅大多了。“你需要注意改变产生的影响”Davidson说。举一个例子：“如果玩家在一个方面有所失去，又在另一个方面有所收获。着看起来是相等的，但事实并不是，就算收获的东西要比失去的东西更好，但玩家的感情还是会有所不同”。</p>
+<p>然而，事情不只是这么简单</p>
+<p>这里还有更多要说的，因为我们在收益和损失上附加的价值也会随着收益的增加而减少，为了说明这一点，请考虑一下这种情况，这是受一个关于收益递减法则(或递减成本)的经典实验的启发。</p>
+<p>想象一下，你正在考虑为升级你的敏捷属性花费15金币。但是问题是，你注意到进行同样的升级，另一个升级点只需要10金币，但是你要到达那里需要花费20分钟。那么你想花费20分钟去另一个升级点吗？</p>
+<p>很多被问了相似问题的其他人（包含真实世界中的物品），说当商品价格为15美元时，他们愿意跑腿去省下这5美元。现在，考虑一下这个情景下的不同数值：</p>
+<p>现在想象你在考虑是否花费1250金币去升级你的耐力属性。现在的问题是，你注意到几个区域之外的另一个升级点只需要1245金币，但是你需要花费20分钟到达那里。</p>
+<p>如果你体验的是这种情景，你还会去花费20分钟去省下5个金币（或者5美元）吗？是这样的，在这种情况中，当数值趋向于一个极端时，我们会变得对收益以及损失的不那么敏感，而不是去思考“二十分钟值不值5美元?”。</p>
+<p><img src="http://ovfgeat2v.bkt.clouddn.com/2017122663933loss-aversion.jpg" alt="2017122663933loss-aversion.jpg"></p>
+<p>我们注意到曲线在右上象限慢慢趋于平缓，在水平坐标上，坐标点位于水平坐标轴1/4处的点</p>
+<p>没看过任何一本心理学著作的游戏设计师们，已经早已意识到这一点。这就是为什么在刺客信条系列的游戏中，每当完成章节最终关卡时，会掉落很多个宝箱（每个宝箱中有足够达到玩家阈值的奖励），而不是一个大宝箱。这也是你会在游戏中到处找商人，训练家来升级技能的原因。</p>
+<p>所以当下次你再提升人物等级，升级你的武器，或者从任务中得到一个奖赏的时候，花费一点时间思考一下：由于我们大脑的不完善，损失厌恶以及敏感度降低会对事情产生怎样的影响。感谢我们有一个不完善的大脑！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/05/反馈回路/" rel="next" title="游戏中的反馈循环机制">
+                <i class="fa fa-chevron-left"></i> 游戏中的反馈循环机制
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/05/为什么有些小游戏一玩就上瘾？/" rel="prev" title="为什么有些小游戏一玩就上瘾？">
+                为什么有些小游戏一玩就上瘾？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Pixelhegel" />
+          <p class="site-author-name" itemprop="name">Pixelhegel</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pixelhegel</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
