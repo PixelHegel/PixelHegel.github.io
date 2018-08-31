@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="cn">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="总结的很好的干货，翻译后带给大家。本文原文专业性较强，有很多翻译不周的地方，希望大家指出。  本文原作者：leiavoia 原文连接：见文末阅读原文 翻译作者：像素黑格尔 版权声明：本文翻译已经过原作者授权，未经许可，禁止转载。   这篇文章是为那些策略游戏的游戏策划准备的，尤其是那些想设计出有深远意义的策略玩法的游戏策划。 这里包含很多设计中的重要原则，以及游戏中可以参考的游戏机制， 策略VS计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="策略游戏中的精妙设计，都遵循这些法则">
+<meta property="og:url" content="http://yoursite.com/2018/02/05/The Strategy Game Designer's Constitution/index.html">
+<meta property="og:site_name" content="像素黑格尔的个人博客">
+<meta property="og:description" content="总结的很好的干货，翻译后带给大家。本文原文专业性较强，有很多翻译不周的地方，希望大家指出。  本文原作者：leiavoia 原文连接：见文末阅读原文 翻译作者：像素黑格尔 版权声明：本文翻译已经过原作者授权，未经许可，禁止转载。   这篇文章是为那些策略游戏的游戏策划准备的，尤其是那些想设计出有深远意义的策略玩法的游戏策划。 这里包含很多设计中的重要原则，以及游戏中可以参考的游戏机制， 策略VS计">
+<meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2018-08-31T05:42:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="策略游戏中的精妙设计，都遵循这些法则">
+<meta name="twitter:description" content="总结的很好的干货，翻译后带给大家。本文原文专业性较强，有很多翻译不周的地方，希望大家指出。  本文原作者：leiavoia 原文连接：见文末阅读原文 翻译作者：像素黑格尔 版权声明：本文翻译已经过原作者授权，未经许可，禁止转载。   这篇文章是为那些策略游戏的游戏策划准备的，尤其是那些想设计出有深远意义的策略玩法的游戏策划。 这里包含很多设计中的重要原则，以及游戏中可以参考的游戏机制， 策略VS计">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/02/05/The Strategy Game Designer's Constitution/"/>
+
+
+
+
+
+  <title>策略游戏中的精妙设计，都遵循这些法则 | 像素黑格尔的个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="cn">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">像素黑格尔的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">关注游戏，数据分析，网络爬虫</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/05/The Strategy Game Designer's Constitution/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="像素黑格尔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://pixelhegel.github.io/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="像素黑格尔的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">策略游戏中的精妙设计，都遵循这些法则</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-05T21:59:00+08:00">
+                2018-02-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/游戏/" itemprop="url" rel="index">
+                    <span itemprop="name">游戏</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>总结的很好的干货，翻译后带给大家。本文原文专业性较强，有很多翻译不周的地方，希望大家指出。</p>
+<blockquote>
+<p>本文原作者：leiavoia<br>
+原文连接：见文末阅读原文<br>
+翻译作者：像素黑格尔<br>
+版权声明：本文翻译已经过原作者授权，未经许可，禁止转载。</p>
+</blockquote>
+<hr>
+<p>这篇文章是为那些策略游戏的游戏策划准备的，尤其是那些想设计出有深远意义的策略玩法的游戏策划。
+这里包含很多设计中的重要原则，以及游戏中可以参考的游戏机制，</p>
+<h2>策略VS计策</h2>
+<p>在我们开始之前，我们需要弄明白策略（Strategy）和计策（tactics）的区别。首先我们先看一下这两个词的学术定义（参考了多种来源）：</p>
+<ul>
+<li>策略：准备去完成一个特定目标的行动计划。一个行动的详尽的，且系统的计划。意思大致包含了”计划（plan）”和“图谋（scheme）”。</li>
+<li></li>
+<li>计策：去实现一个目的，达成一个结果的步骤。一个实现目标的权宜之计，或者说一个花招。一个“策略”是一个行动的总体计划，是很多战术（Tactics）的集合。战术（Tactics），换句话说，是支持策略（Strategy）的单独的计策或者行动。</li>
+</ul>
+<p>在策略游戏的设计中，我们需要不断地提升游戏体验的某些方面。策略游戏具有如下特征：</p>
+<ul>
+<li>
+<p><strong>长远目标的游戏（除去简单的胜利）</strong>。所有游戏都是为了去赢的。这也是使得他们成为“游戏”的原因。在策略游戏中，想要赢得胜利，需要有一个长远的目标。像”俘获皇后“或者”加固我现在的据点“，这些目标要比利用特殊的游戏单位或数值来的高级些，但是还不能描述整个游戏本身（胜利为目的）。</p>
+</li>
+<li>
+<p><strong>实现目标的前期思考</strong> 基于我们上面的描述，经典的策略游戏国际象棋呈现出比一个计策游戏更多的内容。每一步的移动都很关键，每一个棋子都很有价值，因此，国际象棋被广泛地认可为一款策略游戏。好的国际象棋棋手不会单独地考虑棋子，他们会着眼于整个棋盘，思考如何走下面几步才能取得优势。走每一步只考虑眼前大价值是一个新手的标志。因此，策略游戏强调前期思考，深谋远虑。</p>
+</li>
+<li>
+<p><strong>和整体策略比较，最小化具体行动的影响</strong> 策略将是赢得一场策略游戏的关键，而不是计策。虽然游戏中或许会包含很多特别的操作，但游戏作为一个整体不应该强调具体的行动。执行一个好的或者坏的“操作”不应该决定你是否会赢或者输掉游戏。一些游戏会让玩家觉得如果他们没有获得一个好的开局，他们必须重新开始游戏。这将会造成设计缺陷（或者玩家的困扰）。</p>
+</li>
+<li>
+<p><strong>关系到整体的单独单位或行动是重要的</strong> 通常失去一个游戏单位或者输掉一次对战对策略游戏的影响是被削弱的。但不意味着某些关键的单位，关键的战斗以及计策是不重要的。然而在更大的计划中，这些具体的细节不会让你赢或输掉游戏。比如，在国际象棋中，皇后是十分重要的棋子。但是失去皇后并不意味着输掉游戏。或许，失去这个“单位”是整个策略的一部分。计策（Tactics）游戏在这一点上截然相反：根据形式的需要，行动是按照它的实际价值执行的；它更专注于具体的动作或特定的单位，而这些特定的单位可以让你赢得或输掉比赛。很少有长期的目标，游戏可以被分成更短的部分（“行动”，“章节”，“任务”等等）。策略游戏通常从开始到结束，允许有多种方式，不会用一个完整的行动来限制玩家。</p>
+</li>
+</ul>
+<h2>策略游戏设计的指导原则</h2>
+<hr>
+<p>下面是一些简单的规则和示例，它们可以帮助描述策略游戏。这些规则可以帮助开发者做出更好的设计，也可以帮助玩家从中获取快乐。当我们问自己“是什么造就了一款好的策略游戏？“，我们也会问”我怎么才能让这个游戏变得有趣？”，显然，这是有些主观的。有些人只是为了开心才去玩游戏，有些人是为了获得沉浸的体验，还有一些目标导向的家伙是为了挑战自我（通关最高难度的关卡，刷新新纪录等等）。不是所有的游戏都是为大众准备的。但是一般来说，下面的规则可以被应用到策略游戏中。</p>
+<h2>显而易见的选择不能被称作选择</h2>
+<p>如果你提供了两个选项给玩家，一个A一个B，A总是比B好。那么这个选择永远都不应该呈现给玩家。这会变得单调乏味，因为玩家认为这是不必要的。</p>
+<p>这表现在不同的方面，但大多数情况下都可以归结为一个平衡问题。一些游戏中显然有很多，可以被玩家快速加以利用的不平衡特性。如果选项A总是要比其他选项好，玩家还有理由选择其他选项吗？</p>
+<p>这个问题的另一方面是，你遇到两个不同的情况，但是这两种情况都对应了特别鲜明的的解决方法。让玩家“解决”显而易见的问题不用动任何脑子，这不会让游戏变得有趣。没有体现出策略的价值。如果方形钉子总是在方形孔中，他们在游戏中就没有意义了。你需要在不同的情况下有不同的结果。</p>
+<h2>玩家需要理解游戏机制</h2>
+<p>游戏是有规则的，玩家玩游戏就需要理解这些规则。PC上的策略游戏有一种脱离规则的倾向。有太多东西要去学，以至于让玩家不知所措。有一定程度的学习曲线不是一件坏的事情，但是不必要的在玩家面前隐藏核心机制，通常都是不明智的。玩家需要知道为什么，比如，这把武器攻击力高于十点，但每次只能对敌人造成十点伤害，如果玩家理解了简单的伤害计算逻辑，游戏就有了更高的可玩性。如果玩家永远也不知道为什么更高攻击力的武器对敌人只能造成十点伤害，那么玩家的整个体验就会变的挫败。</p>
+<h2>玩家进行选择后的明确反馈十分必要</h2>
+<p>对于玩家的选择是否正确的反馈，必须要十分明确。是好是坏，还是有轻微好处或者有轻微坏处，或者无关大雅这些反馈都可以，但是一定要明确清楚。如果给玩家呈现出十个选项，在尝试了十个选项之后，并不觉得有什么不同，这些选择只能是浪费时间</p>
+<h2>给予玩家更少的元素，更多的可能</h2>
+<p>给予玩家少量的元素和更多的使用方法，而不是提供给玩家很多元素但用法少的可怜。这样做的目的是增加玩家的选择数量进而增加了游戏的乐趣，并减少了游戏元素的数量。额外的元素会增加玩家的记忆负担，以及设计和开发成本。</p>
+<p>在经典的地牢游戏中，红色的钥匙打开红色的门，蓝色的钥匙打开蓝色的门，以此类推。这个情景提供了很多物品（很多门和钥匙），但是没有选择（只能用对应的钥匙开对应的门）。这最终让游戏变得沉闷无比，没有策略元素。这种游戏机制应该出现在冒险游戏里，而不是策略游戏。</p>
+<h2>不要设计成已知的结果</h2>
+<p>如果一个游戏的结局是确定的，“玩”这个行为就停止了。“玩”一个游戏的概念意味着游戏结果是未知不确定的。如果游戏的结果（比如谁赢或谁输）在游戏中途就被知晓，它就已经不能被称作游戏了，游戏在结果已知的情况下变得不再有趣。这对胜利和失败的一方都是不好的。</p>
+<p>你可以通过改变胜利条件来避免在游戏过程中玩家知晓结果。你也可以通过增加负反馈机制来增加游戏的紧凑性（将在下面介绍“反馈回路“），</p>
+<h2>提供风险—回报类型的决策</h2>
+<p>投资者很清楚这些概念，你可以投资低风险的股票和债券，但是收获的回报也少。或者，你可以投资高风险的证券，但这些证券可能会获得或失去大量的现金。策略的选择也应该是这样的，你选择低风险的A，获得较低的稳定奖赏，选择高风险的B，就有获得更高奖赏的可能。通过让玩家选择风险等级，可以用这种方式抵消“显而易见的选择”的问题（参考上文“显而易见的选择不能被称作选择”）</p>
+<h2>不要提供玩家不能参与交互的系统</h2>
+<p>有些游戏很擅长制造错综复杂的规则。虽然这并不一定是坏事，但是如果一个特别复杂的系统再配以一个简单的交互界面，就有问题了。为什么这样不好？这会否定所有的复杂度。</p>
+<p>如果复杂的系统被抽象成简单的符号和数字放在屏幕上，复杂性就会消失的无影无踪。玩家不能理解在界面之下发生了什么，系统无杂度对于玩家而言处于丢失状态，玩家既不能理解开发者放入系统中错综复杂的计算，又不能通过和系统交互以一种有意义的方式来影响它，甚至都注意不到这复杂的系统。对于玩家来说，一些简单的规则是更好。只有当玩家能理解规则的时候，你才可以建立一个复杂的系统并配以复杂的界面。</p>
+<p>未完待续...</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/05/为什么有些小游戏一玩就上瘾？/" rel="next" title="为什么有些小游戏一玩就上瘾？">
+                <i class="fa fa-chevron-left"></i> 为什么有些小游戏一玩就上瘾？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://pixelhegel.github.io/images/avatar.png"
+               alt="像素黑格尔" />
+          <p class="site-author-name" itemprop="name">像素黑格尔</p>
+           
+              <p class="site-description motion-element" itemprop="description">把生活数字化，你会发现世界就变成了游戏</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">策略VS计策</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">策略游戏设计的指导原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">显而易见的选择不能被称作选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">玩家需要理解游戏机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">玩家进行选择后的明确反馈十分必要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">给予玩家更少的元素，更多的可能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">不要设计成已知的结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">提供风险—回报类型的决策</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">不要提供玩家不能参与交互的系统</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">像素黑格尔</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
