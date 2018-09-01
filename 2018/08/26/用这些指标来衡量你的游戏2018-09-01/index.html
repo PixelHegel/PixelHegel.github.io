@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="cn">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Title: 用这些指标来衡量你的游戏，才能做到心中有数date: 2018-8-31tags: [游戏运营]categories: 游戏  Mobile Downloads-应用下载量一个游戏在应用商店被下载的次数是我们最先关注的指标，iOS在iTunesconnect可以看到，安卓各渠道也能在后台看到，下载量是后面分析指标的基础。 Installations-应用下载量一个游戏在应用商店被下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="黑格尔的红色胶囊">
+<meta property="og:url" content="http://yoursite.com/2018/08/26/用这些指标来衡量你的游戏2018-09-01/index.html">
+<meta property="og:site_name" content="黑格尔的红色胶囊">
+<meta property="og:description" content="Title: 用这些指标来衡量你的游戏，才能做到心中有数date: 2018-8-31tags: [游戏运营]categories: 游戏  Mobile Downloads-应用下载量一个游戏在应用商店被下载的次数是我们最先关注的指标，iOS在iTunesconnect可以看到，安卓各渠道也能在后台看到，下载量是后面分析指标的基础。 Installations-应用下载量一个游戏在应用商店被下">
+<meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2018-09-01T08:05:38.868Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="黑格尔的红色胶囊">
+<meta name="twitter:description" content="Title: 用这些指标来衡量你的游戏，才能做到心中有数date: 2018-8-31tags: [游戏运营]categories: 游戏  Mobile Downloads-应用下载量一个游戏在应用商店被下载的次数是我们最先关注的指标，iOS在iTunesconnect可以看到，安卓各渠道也能在后台看到，下载量是后面分析指标的基础。 Installations-应用下载量一个游戏在应用商店被下">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/26/用这些指标来衡量你的游戏2018-09-01/"/>
+
+
+
+
+
+  <title> | 黑格尔的红色胶囊</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="cn">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">黑格尔的红色胶囊</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">数据分析/机器学习/游戏设计</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/26/用这些指标来衡量你的游戏2018-09-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="像素黑格尔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://pixelhegel.github.io/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黑格尔的红色胶囊">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-26T11:31:13+08:00">
+                2018-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>Title: 用这些指标来衡量你的游戏，才能做到心中有数<br>date: 2018-8-31<br>tags: [游戏运营]<br>categories: 游戏</p>
+<hr>
+<h4 id="Mobile-Downloads-应用下载量"><a href="#Mobile-Downloads-应用下载量" class="headerlink" title="Mobile Downloads-应用下载量"></a>Mobile Downloads-应用下载量</h4><p>一个游戏在应用商店被下载的次数是我们最先关注的指标，iOS在iTunesconnect可以看到，安卓各渠道也能在后台看到，下载量是后面分析指标的基础。</p>
+<h4 id="Installations-应用下载量"><a href="#Installations-应用下载量" class="headerlink" title="Installations-应用下载量"></a>Installations-应用下载量</h4><p>一个游戏在应用商店被下载的次数是我们最先关注的指标，iOS在iTunesconnect可以看到，安卓各渠道也能在后台看到，下载量是后面分析指标的基础。</p>
+<h4 id="Uninstallations-卸载量"><a href="#Uninstallations-卸载量" class="headerlink" title="Uninstallations-卸载量"></a>Uninstallations-卸载量</h4><p>我们关注新用户涌入的同时，也要关注一下用户流失的情况，目前用户卸载行为的追踪在iOS端很难做到，在Android可以通过接入第三方SDK来办到，前提是用户手机上同时安装继承该SDK的其他应用。</p>
+<h4 id="Registrations-注册"><a href="#Registrations-注册" class="headerlink" title="Registrations-注册"></a>Registrations-注册</h4><p>用户注册是来衡量新增用户的最直接指标，通常注册被分为新增账号和新增角色，往往新增账号是指用户登陆后的注册行为，包括手机号注册，微信或QQ登陆，新增角色是指用户在通过新手教程，并且成功创建角色输入昵称之后的行为，我们通常会做从下载到新增角色的漏斗模型，从而判断个环节用户流失情况。</p>
+<h4 id="Crashes-程序崩溃"><a href="#Crashes-程序崩溃" class="headerlink" title="Crashes-程序崩溃"></a>Crashes-程序崩溃</h4><p>游戏在上线之前，做好错误日志的准备工作，程序崩溃的记录是至关重要的，我们会从中得到游戏在不同设备的正常运行情况，是今后进行优化的重要参考。</p>
+<h4 id="Upgrades-更新"><a href="#Upgrades-更新" class="headerlink" title="Upgrades-更新"></a>Upgrades-更新</h4><h4 id="User-Growth-Rate-用户增长率"><a href="#User-Growth-Rate-用户增长率" class="headerlink" title="User Growth Rate-用户增长率"></a>User Growth Rate-用户增长率</h4><p>用户增长率需要以一个周期为单位，比如用户数量这周同比上周增长多少，这月同比上月增长多少，通常使用下面公式计算。</p>
+<blockquote>
+<p>((Present – Past) / (Past)) X 100  </p>
+</blockquote>
+<h4 id="Retention-Rate-留存率"><a href="#Retention-Rate-留存率" class="headerlink" title="Retention Rate-留存率"></a>Retention Rate-留存率</h4><p>留存率是一个关键的指标，用来衡量被推广的</p>
+<blockquote>
+<p>Retention Rate = ((Ue – Un) / Us)) X 100<br>Ue = number of users at end of period 周期结束时多用户总数<br>Un = number of new users acquired during period 在周期内获取的新用户数<br>Us = number of users at start of period 周期开始时的用户总数</p>
+</blockquote>
+<h4 id="App-Open-Rate-or-AOR-打开率"><a href="#App-Open-Rate-or-AOR-打开率" class="headerlink" title="App Open Rate or AOR-打开率"></a>App Open Rate or AOR-打开率</h4><p>当留存率过低时，高质量的消息推送是提高留存率的措施之一，我们通常用打开率的指标来衡量消息推送达到的效果，恰当的内容，恰当的时机，是一个打开率高的推送的必备条件。</p>
+<h4 id="Session-Length-会话时长"><a href="#Session-Length-会话时长" class="headerlink" title="Session Length - 会话时长"></a>Session Length - 会话时长</h4><p>Session是从网站中引进的概念，在游戏中，Session Length 指用户一次从进入游戏到退出游戏的时长。</p>
+<h4 id="Session-Interval-会话间隔"><a href="#Session-Interval-会话间隔" class="headerlink" title="Session Interval - 会话间隔"></a>Session Interval - 会话间隔</h4><p>用户相邻两次打开游戏的间隔。</p>
+<h4 id="Session-Depth-会话深度"><a href="#Session-Depth-会话深度" class="headerlink" title="Session Depth - 会话深度"></a>Session Depth - 会话深度</h4><p>用户一次进入游戏后，所到达的功能深度，比如用户进入游戏只是简单的领取啦奖励就退出了，那么这次的会话深度可以设定为1，如果用户进入游戏后还玩了休闲对战，这次会话深度就可以定为2，玩了排位对战就可以定为3，以此类推。</p>
+<h4 id="Average-Screens-Per-Visit-平均每次访问界面数量"><a href="#Average-Screens-Per-Visit-平均每次访问界面数量" class="headerlink" title="Average Screens Per Visit -平均每次访问界面数量"></a>Average Screens Per Visit -平均每次访问界面数量</h4><p>用户每次会话访问的界面数量，我们也可以根据游戏类型的不同（有些游戏的二级界面不多），统计用户每次访问的不同按钮点击数量。</p>
+<h4 id="Daily-Active-Users-DAU-日活跃用户数量"><a href="#Daily-Active-Users-DAU-日活跃用户数量" class="headerlink" title="Daily Active Users (DAU)-日活跃用户数量"></a>Daily Active Users (DAU)-日活跃用户数量</h4><p>每天登陆的用户数量。每个厂商内部统计日活的时候会有差异，一般登录一次游戏就算一次活跃，也有海外厂商，至少开启一次单局才算一次活跃。</p>
+<h4 id="Monthly-Active-Users-MAU-月活跃用户数量"><a href="#Monthly-Active-Users-MAU-月活跃用户数量" class="headerlink" title="Monthly Active Users (MAU)-月活跃用户数量"></a>Monthly Active Users (MAU)-月活跃用户数量</h4><p>每月登陆的用户数量。</p>
+<h4 id="Social-Shares-社交分享数量"><a href="#Social-Shares-社交分享数量" class="headerlink" title="Social Shares-社交分享数量"></a>Social Shares-社交分享数量</h4><p>如果你的游戏有做例如微信朋友圈分享的分享活动，那么统计游戏的社交分享次数，和分享率将是一个必不可少的工作。</p>
+<h4 id="Churn-rate-流失率"><a href="#Churn-rate-流失率" class="headerlink" title="Churn rate-流失率"></a>Churn rate-流失率</h4><p>通常我们用以下方式定义流失和流失率：</p>
+<ul>
+<li>流失：到某日为止，玩家连续一个周期没有登陆过游戏，则被视为一个流失。</li>
+<li>流失率：每天的连续一周期不登陆玩家数占该日一周期前活跃玩家数的比例。<br>听起来可能比较拗口，我们来举个例子：如果周期为7天，8月1日统计活跃玩家数为100，那么在8月8日的时候，统计到100人当中有45名玩家在这期间没有登录过，则得出5月1日的流失率为45/100=45%<br>#### <h4 id="Average-Revenue-Per-User-ARPU-平均每用户收入"><a href="#Average-Revenue-Per-User-ARPU-平均每用户收入" class="headerlink" title="Average Revenue Per User (ARPU)-平均每用户收入"></a>Average Revenue Per User (ARPU)-平均每用户收入</h4>ARPU表示的是一个时间周期内我们平均从每个用户获得的价值，这个时间周期通常是日，或者月。<br>计算方式：<blockquote>
+<p>Lifetime Revenue / # of Users  </p>
+</blockquote>
+<h4 id="Lifetime-Value-LTV-生命周期价值"><a href="#Lifetime-Value-LTV-生命周期价值" class="headerlink" title="Lifetime Value (LTV) - 生命周期价值"></a>Lifetime Value (LTV) - 生命周期价值</h4>生命周期价值是指用户在他的生命周期内（从注册游戏到彻底流失）的总价值贡献，和ARPU相结合，是衡量游戏价值的重要标准。通常LTV很难精准的计算，需要用到多种方法预测，可以通过ARPU进行简单的预测，也可以使用机器学习相关算法进行建模，从而获得更加精准的预测结果。<h4 id="Time-To-First-Purchase-第一次付费时间"><a href="#Time-To-First-Purchase-第一次付费时间" class="headerlink" title="Time To First Purchase - 第一次付费时间"></a>Time To First Purchase - 第一次付费时间</h4>该指标衡量用户从下载游戏到第一次进行付费的时间，对于新手礼包的优化，付费率的提升有很大的参考价值。<br>计算方式：<blockquote>
+<p>Date/Time of First Purchase – Date/Time Registered  </p>
+</blockquote>
+<h4 id="Purchases-付费"><a href="#Purchases-付费" class="headerlink" title="Purchases-付费"></a>Purchases-付费</h4>指用户进行付费的金额。<h4 id="Customer-Acquisition-Cost-单个玩家获取成本"><a href="#Customer-Acquisition-Cost-单个玩家获取成本" class="headerlink" title="Customer Acquisition Cost - 单个玩家获取成本"></a>Customer Acquisition Cost - 单个玩家获取成本</h4>每次拉新活动，推广结束之后，我们不仅要关注拉新数量，还要关注单个玩家获取成本，衡量收益付出比是否合理。<blockquote>
+<p>获取玩家总成本/新增玩家数量  </p>
+</blockquote>
+<h4 id="eCPM-Effective-Cost-Per-Mille"><a href="#eCPM-Effective-Cost-Per-Mille" class="headerlink" title="eCPM (Effective Cost Per Mille)"></a>eCPM (Effective Cost Per Mille)</h4>CPM是对广告主说的词，你要花多少钱，买一千次广告展示机会；<br>eCPM是对媒体说的词，你每展示一千次广告，能赚多少钱！<h4 id="Return-On-Investment-ROI-投资回报率"><a href="#Return-On-Investment-ROI-投资回报率" class="headerlink" title="Return On Investment (ROI)-投资回报率"></a>Return On Investment (ROI)-投资回报率</h4>游戏公司首先是一个企业，ROI是指通过投资而应返回的价值，即企业从一项投资活动中得到的经济回报。通常ROI的计算方式为：<blockquote>
+<p>(Gain from Investment – Cost of Investment) / Cost of Investment<br>(收入总额-投资总额）/投资总额  </p>
+</blockquote>
+<h4 id="Cost-Per-Install-CPI-按安装付费"><a href="#Cost-Per-Install-CPI-按安装付费" class="headerlink" title="Cost Per Install (CPI) - 按安装付费"></a>Cost Per Install (CPI) - 按安装付费</h4>用户每一次安装游戏，广告商就要付钱，就算这游戏一直装着，广告商也只付这一次钱，并且只管你装不装不管你看不看。CPI算是一种比较有效率的收费方式。也是衡量CAC的重要方式。<h3 id="用户体验指标"><a href="#用户体验指标" class="headerlink" title="用户体验指标"></a>用户体验指标</h3><h4 id="Load-Time-游戏载入时长"><a href="#Load-Time-游戏载入时长" class="headerlink" title="Load Time-游戏载入时长"></a>Load Time-游戏载入时长</h4>记录每个用户在进行游戏载入时消耗的时长，游戏载入时长不仅和用户设备有关，也和用户当前所处地理位置，网络状况有关，游戏载入时长在进行用户流失预测时拥有很大的权重。<h4 id="Devices-设备"><a href="#Devices-设备" class="headerlink" title="Devices-设备"></a>Devices-设备</h4>统计用户的设备型号。<h4 id="OS-操作系统"><a href="#OS-操作系统" class="headerlink" title="OS-操作系统"></a>OS-操作系统</h4>统计用户所使用的操作系统。<h4 id="Screen-Dimensions-Resolution—屏幕比例-分辨率"><a href="#Screen-Dimensions-Resolution—屏幕比例-分辨率" class="headerlink" title="Screen Dimensions/Resolution—屏幕比例/分辨率"></a>Screen Dimensions/Resolution—屏幕比例/分辨率</h4>统计用户的屏幕比例。<h4 id="Permissions-Granted-权限获取情况"><a href="#Permissions-Granted-权限获取情况" class="headerlink" title="Permissions Granted - 权限获取情况"></a>Permissions Granted - 权限获取情况</h4>统计游戏在用户设备上的权限获取情况。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/05/The Strategy Game Designer's Constitution/" rel="next" title="策略游戏中的精妙设计，都遵循这些法则">
+                <i class="fa fa-chevron-left"></i> 策略游戏中的精妙设计，都遵循这些法则
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://pixelhegel.github.io/images/avatar.png"
+               alt="像素黑格尔" />
+          <p class="site-author-name" itemprop="name">像素黑格尔</p>
+           
+              <p class="site-description motion-element" itemprop="description">the reality is broken</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Mobile-Downloads-应用下载量"><span class="nav-number">1.</span> <span class="nav-text">Mobile Downloads-应用下载量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Installations-应用下载量"><span class="nav-number">2.</span> <span class="nav-text">Installations-应用下载量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Uninstallations-卸载量"><span class="nav-number">3.</span> <span class="nav-text">Uninstallations-卸载量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Registrations-注册"><span class="nav-number">4.</span> <span class="nav-text">Registrations-注册</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Crashes-程序崩溃"><span class="nav-number">5.</span> <span class="nav-text">Crashes-程序崩溃</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Upgrades-更新"><span class="nav-number">6.</span> <span class="nav-text">Upgrades-更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#User-Growth-Rate-用户增长率"><span class="nav-number">7.</span> <span class="nav-text">User Growth Rate-用户增长率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Retention-Rate-留存率"><span class="nav-number">8.</span> <span class="nav-text">Retention Rate-留存率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#App-Open-Rate-or-AOR-打开率"><span class="nav-number">9.</span> <span class="nav-text">App Open Rate or AOR-打开率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Session-Length-会话时长"><span class="nav-number">10.</span> <span class="nav-text">Session Length - 会话时长</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Session-Interval-会话间隔"><span class="nav-number">11.</span> <span class="nav-text">Session Interval - 会话间隔</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Session-Depth-会话深度"><span class="nav-number">12.</span> <span class="nav-text">Session Depth - 会话深度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Average-Screens-Per-Visit-平均每次访问界面数量"><span class="nav-number">13.</span> <span class="nav-text">Average Screens Per Visit -平均每次访问界面数量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Daily-Active-Users-DAU-日活跃用户数量"><span class="nav-number">14.</span> <span class="nav-text">Daily Active Users (DAU)-日活跃用户数量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Monthly-Active-Users-MAU-月活跃用户数量"><span class="nav-number">15.</span> <span class="nav-text">Monthly Active Users (MAU)-月活跃用户数量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Social-Shares-社交分享数量"><span class="nav-number">16.</span> <span class="nav-text">Social Shares-社交分享数量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Churn-rate-流失率"><span class="nav-number">17.</span> <span class="nav-text">Churn rate-流失率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Average-Revenue-Per-User-ARPU-平均每用户收入"><span class="nav-number">18.</span> <span class="nav-text">Average Revenue Per User (ARPU)-平均每用户收入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lifetime-Value-LTV-生命周期价值"><span class="nav-number">19.</span> <span class="nav-text">Lifetime Value (LTV) - 生命周期价值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Time-To-First-Purchase-第一次付费时间"><span class="nav-number">20.</span> <span class="nav-text">Time To First Purchase - 第一次付费时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Purchases-付费"><span class="nav-number">21.</span> <span class="nav-text">Purchases-付费</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Customer-Acquisition-Cost-单个玩家获取成本"><span class="nav-number">22.</span> <span class="nav-text">Customer Acquisition Cost - 单个玩家获取成本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eCPM-Effective-Cost-Per-Mille"><span class="nav-number">23.</span> <span class="nav-text">eCPM (Effective Cost Per Mille)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Return-On-Investment-ROI-投资回报率"><span class="nav-number">24.</span> <span class="nav-text">Return On Investment (ROI)-投资回报率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cost-Per-Install-CPI-按安装付费"><span class="nav-number">25.</span> <span class="nav-text">Cost Per Install (CPI) - 按安装付费</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户体验指标"><span class="nav-number"></span> <span class="nav-text">用户体验指标</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Load-Time-游戏载入时长"><span class="nav-number">1.</span> <span class="nav-text">Load Time-游戏载入时长</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Devices-设备"><span class="nav-number">2.</span> <span class="nav-text">Devices-设备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OS-操作系统"><span class="nav-number">3.</span> <span class="nav-text">OS-操作系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Screen-Dimensions-Resolution—屏幕比例-分辨率"><span class="nav-number">4.</span> <span class="nav-text">Screen Dimensions/Resolution—屏幕比例/分辨率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Permissions-Granted-权限获取情况"><span class="nav-number">5.</span> <span class="nav-text">Permissions Granted - 权限获取情况</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">像素黑格尔</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
